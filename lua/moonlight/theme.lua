@@ -429,7 +429,6 @@ theme.loadPlugins = function()
 
         -- BufferLine
         BufferLineIndicatorSelected =           { fg = moonlight.accent },
-        BufferLineFill =                        { bg = moonlight.bg_alt },
 
         -- Sneak
         Sneak =                                 { fg = moonlight.bg, bg = moonlight.accent },
@@ -438,7 +437,7 @@ theme.loadPlugins = function()
         -- Indent Blankline
         IndentBlanklineChar =                   { fg = moonlight.highlight },
         IndentBlanklineContextChar =            { fg = moonlight.disabled },
-	
+
 	 -- Nvim dap
          DapBreakpoint =                         { fg = moonlight.red },
          DapStopped =                            { fg = moonlight.green },
@@ -446,11 +445,13 @@ theme.loadPlugins = function()
 
     -- Options:
 
-    -- Disable nvim-tree background
+    -- Disable nvim-tree and Bufferline background
         if vim.g.moonlight_disable_background == true then
             plugins.NvimTreeNormal =                        { fg = moonlight.fg, bg = moonlight.none }
+			plugins.BufferLineFill =                        { bg = moonlight.none }
         else
             plugins.NvimTreeNormal =                        { fg = moonlight.fg, bg = moonlight.sidebar }
+			plugins.BufferLineFill =                        { bg = moonlight.bg }
         end
 
     return plugins
