@@ -27,6 +27,7 @@ local moonlight = {
 	disabled =      '#515772',
 	cursor =        '#5cb4fc',
 	accent =        '#a3ace1',
+	fold =			'#a1abe0',
 
 	error =         '#FF5370',
 	link =          '#80CBC4',

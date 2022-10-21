@@ -92,7 +92,6 @@ theme.loadEditor = function ()
     -- Editor highlight groups
 
 	local editor = {
-		NormalFloat =			{ fg = moonlight.fg, bg = moonlight.float }, -- normal text and background color
 		ColorColumn =			{ fg = moonlight.none, bg = moonlight.active }, --  used for the columns set with 'colorcolumn'
 		Conceal =				{ fg = moonlight.disabled }, -- placeholder characters substituted for concealed text (see 'conceallevel')
 		Cursor =				{ fg = moonlight.cursor, bg = moonlight.none, style = 'reverse' }, -- the character under the cursor
@@ -104,7 +103,7 @@ theme.loadEditor = function ()
 		DiffText =				{ fg = moonlight.yellow, bg = moonlight.none, style = 'reverse' }, -- diff mode: Changed text within a changed line
 		EndOfBuffer =			{ fg = moonlight.disabled },
 		ErrorMsg =				{ fg = moonlight.none },
-		Folded =				{ fg = moonlight.disabled, bg = moonlight.none, style = 'italic' },
+		Folded =				{ fg = moonlight.fold, bg = moonlight.none, style = 'italic' },
 		FoldColumn =			{ fg = moonlight.blue },
 		IncSearch =				{ fg = moonlight.highlight, bg = moonlight.white, style = 'reverse' },
 		LineNr =				{ fg = moonlight.line_numbers },
@@ -166,17 +165,21 @@ theme.loadEditor = function ()
     --Set transparent background
     if vim.g.moonlight_disable_background == true then
 		editor.Normal =				{ fg = moonlight.fg, bg = moonlight.none } -- normal text and background color
+		editor.NormalFloat =		{ fg = moonlight.fg, bg = moonlight.none } -- normal text and background color
 		editor.SignColumn =			{ fg = moonlight.fg, bg = moonlight.none }
     else
 		editor.Normal =				{ fg = moonlight.fg, bg = moonlight.bg } -- normal text and background color
+		editor.NormalFloat =		{ fg = moonlight.fg, bg = moonlight.bg } -- normal text and background color
 		editor.SignColumn =			{ fg = moonlight.fg, bg = moonlight.bg }
     end
 
     -- Remove window split borders
     if vim.g.moonlight_borders == true then
 		editor.VertSplit =				{ fg = moonlight.border }
+		editor.FloatBorder =			{ fg = moonlight.fg }
     else
 		editor.VertSplit =				{ fg = moonlight.bg }
+		editor.FloatBorder =			{ fg = moonlight.bg }
     end
 
     return editor
@@ -411,9 +414,9 @@ theme.loadPlugins = function()
         DiagnosticHint =                        { fg = moonlight.purple },
         DiagnosticTruncateLine =                { fg = moonlight.fg },
         LspFloatWinNormal =                     { bg = moonlight.contrast },
-        LspFloatWinBorder =                     { fg = moonlight.purple },
+        LspFloatWinBorder =                     { fg = moonlight.fg },
         LspSagaBorderTitle =                    { fg = moonlight.cyan },
-        LspSagaHoverBorder =                    { fg = moonlight.paleblue },
+        LspSagaHoverBorder =                    { fg = moonlight.fg },
         LspSagaRenameBorder =                   { fg = moonlight.green },
         LspSagaDefPreviewBorder =               { fg = moonlight.green },
         LspSagaCodeActionBorder =               { fg = moonlight.blue },
