@@ -103,8 +103,8 @@ theme.loadEditor = function ()
 		DiffText =				{ fg = moonlight.yellow, bg = moonlight.none, style = 'reverse' }, -- diff mode: Changed text within a changed line
 		EndOfBuffer =			{ fg = moonlight.disabled },
 		ErrorMsg =				{ fg = moonlight.none },
-		Folded =				{ fg = moonlight.fold, bg = moonlight.none, style = 'italic' },
 		FoldColumn =			{ fg = moonlight.blue },
+		Folded =				{ fg = moonlight.fold, bg = moonlight.none, style = 'italic' },
 		IncSearch =				{ fg = moonlight.highlight, bg = moonlight.white, style = 'reverse' },
 		LineNr =				{ fg = moonlight.line_numbers },
 		CursorLineNr =			{ fg = moonlight.accent },
@@ -137,6 +137,7 @@ theme.loadEditor = function ()
 		VisualNOS =				{ fg = moonlight.none, bg = moonlight.selection },
 		WarningMsg =			{ fg = moonlight.yellow },
 		WildMenu =				{ fg = moonlight.orange, bg = moonlight.none, style = 'bold' },
+		WinSeparator =			{ fg = moonlight.cyan},
 		CursorColumn =			{ fg = moonlight.none, bg = moonlight.active },
 		CursorLine =			{ fg = moonlight.none, bg = moonlight.none },
 		ToolbarLine =			{ fg = moonlight.fg, bg = moonlight.bg_alt },
@@ -381,7 +382,7 @@ theme.loadPlugins = function()
         TelescopeSelectionCaret =               { fg = moonlight.purple },
         TelescopeSelection =                    { fg = moonlight.purple },
         TelescopeMatching =                     { fg = moonlight.cyan },
-        TelescopeNormal =                       { fg = moonlight.fg, bg = moonlight.float },
+        TelescopeNormal =                       { fg = moonlight.fg, bg = moonlight.bg },
 
         -- NvimTree
         NvimTreeRootFolder =                    { fg = moonlight.blue, style = "bold" },
